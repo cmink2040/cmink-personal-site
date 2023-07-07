@@ -7,7 +7,7 @@ function NavBar(props: any) {
     return (
 
         // import LOGO
-        <div className='flex justify-center space-x-4 py-4'>
+        <div className='fixed flex justify-center items-center space-x-4 py-4 w-full'>
             <p className='font-bold'>CMinK</p>
             <p>About</p>
             <p>Projects</p>
@@ -28,8 +28,10 @@ const TypingText = (props:TypingTextProps) => {
   const [words] = useState(props.words);
 
     useEffect(() => {
-        setTimeout(() => {
-         
+        console.log("CALLING TYPINGTEXT ");
+    },[])
+    useEffect(() => {
+        setTimeout(() => {   
     if(currentIndex < words.length) { 
         setText(text + words.charAt(currentIndex));
         setCurrentIndex(currentIndex + 1);
@@ -37,11 +39,9 @@ const TypingText = (props:TypingTextProps) => {
 }, props.typing);
 
     if (text === words) {
-        console.log("done");
         (async () => {
             await new Promise((resolve) => setTimeout(resolve, props.ending)); // Wait for 2000 milliseconds (2 seconds)
             setText('');
-            console.log('After');
           })();
         return;
     }
@@ -49,61 +49,83 @@ const TypingText = (props:TypingTextProps) => {
   }, [text, currentIndex, words]);
 
   if(text.length > 0)
-  return <h1>{text}</h1>;
+  return <h1 className='text-3xl'>{text}</h1>;
     else
   return;
 };
 
-interface WordSequenceProps{
+interface WordSequenceProps {
     words: string[];
     typing: number;
     ending: number;
     reloadSpeed: number;
+    status: any;
 }
-
+// INDEX Update -> Change Reload, , CurrentFeed, -> Update X -> INDEX UPDATE
 function WordSequence(props: WordSequenceProps) {
     const typingSpeed = props.typing;
-    const [index, setIndex] = useState(0);
     const [text] = useState(props.words);
-    const [loadTime, changeReload] = useState(typingSpeed*text[index].length + props.ending)
-    const [currentFeed, setFeed] = useState(props.words[0]);
-    const [update, flip] = useState(true);
-    const [x, setX] = useState<JSX.Element[]>([]);
+
+    const [loadTime, changeReload] = useState(0)
+    const [index, setIndex] = useState(0);
    
+    const [currentFeed, setFeed] = useState(props.words[0]);
+
+    const [x, setX] = useState<JSX.Element[]>([]);
+ 
+    // Updates the Index when ever X is updated
+    useEffect(() => {
+        console.log("Set index was updated");
+        console.log(loadTime);
+        (async () => { 
+            await new Promise((resolve) => setTimeout(resolve, loadTime));
+            setIndex(index+1);
+        })();
+    }, [x]);
+
+        //Updates FeedBuffer when index is updated
     useEffect (() => {
-        console.log("Set feed was updated: " + text[index] +" "+index);
+        if(index >= text.length) return;
+        console.log("Set feed was updated" );
         setFeed(text[index]);
     }, [index]);
 
+    //Updates Reload when index is updated
     useEffect(() => {
-        console.log(text.length + " " + index+" "+update)
-        if(index<text.length)
-         flip(true);
-        else
-            flip(false);
-    }, [index]);
-
-    useEffect(() => {
+        if(index>=text.length ) return;
+        console.log("Set reload was updated.");
         changeReload(typingSpeed*text[index].length + props.ending);                
     }, [index]);
 
+  //Updates X when FeedBuffer is updated
     useEffect(() => {
-        (async () => {
-            await new Promise((resolve) => setTimeout(resolve, 
-                loadTime)); 
-                const a = index;
-            if(update) { 
-                console.log("index: " + a + " text: " + text[a] + " length: " + text[a].length)
-                setIndex(index+1);}
-          })();
-    }, [update]);
+        console.log("SETX CALLED")
+          setX((prevX) => [
+            ...prevX,
+            <TypingText
+              key={index}
+              words={currentFeed}
+              typing={typingSpeed}
+              ending={props.ending}
+            />,
+          ]);
+      }, [currentFeed]);
 
-    useEffect(() => {
-        if(update)
-        setX((prevX) =>
-        [...prevX, <TypingText key = {Math.random()}
-            words={currentFeed} typing={typingSpeed} ending={props.ending}/>]);
-    }, [currentFeed]);
+      //Updates main header when done, signialling completed
+      useEffect(() => {
+        console.log("SIGNAL CALLED "+index+" "+text.length);
+        if(index>=(text.length-1)) {
+        console.log("COMPLETED");
+        (async () => { 
+            await new Promise((resolve) => setTimeout(resolve, loadTime));
+            props.status();
+            console.log("SIGNAL PASSED "+ index);
+        })();
+    }
+        console.log("SIGNAL FAILED "+ index );
+        
+      }, [x]);
+
     if(index<text.length)
     return (
      <>{x}</>
