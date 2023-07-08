@@ -1,6 +1,19 @@
 import 'tailwindcss/tailwind.css';
 import { useState, useEffect, useRef } from 'react';
 
+const EndBar = () => {
+    return(
+        <div className='sticky flex flex-row justify-center items-center space-x-4 py-4 w-full'>
+        <p> Terms and Services</p>
+        <p> Privacy Policy</p>
+        <p> LMCHK Rules</p>
+        <p> TSMKS NET Rules</p>
+        <p> Legal</p>
+
+        </div>
+    );
+}
+
 function NavBar(props: any) {
     const [currentURL, updateURL] = useState(props)
     props = props || {};
@@ -135,4 +148,4 @@ function WordSequence(props: WordSequenceProps) {
 }
 
 
-export {NavBar, TypingText, WordSequence};
+export {NavBar, TypingText, WordSequence, EndBar};
