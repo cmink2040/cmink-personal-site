@@ -1,14 +1,116 @@
-
+import {EndBar} from './Descriptors.tsx'
 const Homepage = () => {
+    const icons = [
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+        "src/assets/aifavicon.png",
+    ];
+    const command = [
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+        console.log("Hello!"),
+    ];
+    const name = [
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+        "Details",
+    ];
 
     return(
-    <div className='w-full h-screen text-center snap-mandatory snap-y'>
-        <div className='flex flex-col w-screen h-screen text-center justify-center snap-center items-center'>
+    <div className='w-full h-screen text-center snap-mandatory snap-y  '>
+        <div className='bg-[url("src/assets/pex.png")] 
+        flex flex-col w-auto h-screen text-white text-center justify-center snap-center items-center'>
             <h1 className='flex-row text-7xl '>CMinK</h1>
             <p className='flex-row'> TSMKS x LMCHK </p>
         </div>
-
-        <div className='w-full h-screen text-center 
+        <div className='w-auto px-4 h-screen text-center 
         grid grid-cols-1 snap-center items-center'>
             <h1 className=' text-3xl w-full'>About</h1>
             <div className='grid grid-cols-3 align-content-center justify-items-center gap-2 '>
@@ -34,7 +136,7 @@ const Homepage = () => {
             </div>
         </div>
 
-        <div className='w-full h-screen text-center 
+        <div className='w-auto px-4 h-screen text-center 
         grid grid-cols-5 snap-center items-center' >
             <h1 className='grid  text-3xl align-center text-center justify-items-center'>Projects</h1>
             <div className='col-span-4 grid grid-cols-1 align-content-center justify-items-center gap-2 '>
@@ -51,7 +153,33 @@ const Homepage = () => {
                  </div>
             </div>
         </div>
+
+        <div className='w-auto px-4 mx-2 h-screen text-center gap-2 place-content-center 
+        grid grid-cols-10 snap-center items-center' >
+            <h1 className='grid col-span-10 text-3xl align-center text-center justify-items-center '>MENU</h1>
+            {
+                 Array.from({ length: 30 }).map((_, i) => (
+                    <FormatSquare key={i} name={name[i]} icon={icons[i]} command={command[i]} />
+                ))
+            }
+
+                
+        
+            </div>
+        <EndBar/>
     </div>);
+}
+const FormatSquare = (props: any) => {
+    return (
+        <div className= 'grid col-span-1 text-white justify-items-center aspect-square bg-gray-800 \
+        hover:cursor-pointer hover:bg-gray-400 content-center rounded-lg py-2\
+        transition duration-300'
+        onClick = {props.command}>
+        <img src={props.icon} className='w-auto h-3/5 mx-5 mt-5 rounded-2xl' alt='icon'/>
+        <p className='text-center pb-2 text-sm'>        {props.name} </p>
+
+       </div>
+    );
 }
 const FormatLink = (props: any) => {
     return (

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import {NavBar,  WordSequence} from './Descriptors.tsx'
+import {NavBar,  WordSequence, EndBar} from './Descriptors.tsx'
 import Homepage from './hompage.tsx'
 import 'tailwindcss/tailwind.css';
 
@@ -29,9 +29,8 @@ const Main = () => {
   return(
 
     <div>
-            <NavBar />
-
-      <Homepage/>
+      <NavBar />
+      <Homepage />
     </div>
   );
 }
