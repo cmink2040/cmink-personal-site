@@ -4,8 +4,8 @@ const Homepage = () => {
     return(
     <div className='w-full h-screen text-center snap-mandatory snap-y'>
         <div className='flex flex-col w-screen h-screen text-center justify-center snap-center items-center'>
-            <h1 className='flex-row text-7xl text-lg'>CMinK</h1>
-            <p className='flex-row'>TSMKS x LMCHK</p>
+            <h1 className='flex-row text-7xl '>CMinK</h1>
+            <p className='flex-row'> TSMKS x LMCHK </p>
         </div>
 
         <div className='w-full h-screen text-center 
@@ -40,11 +40,10 @@ const Homepage = () => {
             <div className='col-span-4 grid grid-cols-1 align-content-center justify-items-center gap-2 '>
                 <div className= 'bg-gray-800 text-white text-center w-full mx-2 py-4 px-32 rounded-lg'> 
                 Projects <br/>
-                My projects can be found here:
+                My full list of my projects can be found here:
                         </div>
                 <div className= 'bg-gray-800 text-white text-center w-full py-4 px-32 rounded-lg'>
-                     Projects:
-                     Stuff
+                     Current Projects <br/> AI NT Model(StarlightX), SkyGate Media(TSMKS), Website(CMinK)
                     </div>
                  <div className= 'bg-gray-800 text-white text-center w-full py-4 px-32 rounded-lg'>
                      Resume <br/>

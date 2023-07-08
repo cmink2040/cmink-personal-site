@@ -8,10 +8,10 @@ function NavBar(props: any) {
 
         // import LOGO
         <div className='fixed flex justify-center items-center space-x-4 py-4 w-full'>
-            <p className='font-bold'>CMinK</p>
-            <p>About</p>
-            <p>Projects</p>
-            <p>Menu</p>
+            <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>CMinK</p>
+            <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>About</p>
+            <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>Projects</p>
+            <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>Menu</p>
         </div>
     );
 }
