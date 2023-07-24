@@ -4,40 +4,41 @@ import {useEffect, useState} from 'react';
 import {BackgroundImage, LazyImage, LazyRender, SelectDropdownBar} from './reuseComps.tsx'
 import './Fonts.css';
 
+const aiDir = '/assets/aifavicon.png';
 const Homepage = () => {
     const icons = [
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
 
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
 
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
-        "src/assets/aifavicon.png",
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
+        aiDir,
     ];
     const command = [
         () => console.log("Hello"),
@@ -146,7 +147,7 @@ const Homepage = () => {
                     }
                 </div>
             </div>
-            <BackgroundImage src='src/assets/pex.png'
+            <BackgroundImage src='/assets/pex.png'
                              className='w-full h-screen z-20 text-center flex-col flex snap-center fadein justify-center'
                              ImageClassName='absolute -z-50 top-0 left-0 w-full h-screen object-cover'
                              alt='background'>
@@ -187,15 +188,15 @@ const Homepage = () => {
                         Social Media <br/>
                         <div className='flex flex-row align-center justify-center space-x-2 px-16 py-8'>
                             <FormatLink link='https://www.linkedin.com/in/ming-chen-475a3b275/' text='LinkedIn'
-                                        img='src/assets/linkedin-logos/In-White-128.png'/> <br/>
+                                        img='/assets/linkedin-logos/In-White-128.png'/> <br/>
                             <FormatLink link='https://www.github.com/cmink2040' text='Github'
-                                        img='src/assets/github-mark/github-mark-white.png'/> <br/>
+                                        img='/assets/github-mark/github-mark-white.png'/> <br/>
                             <FormatLink link='https://www.instagram.com/cmink2040/' text='Instagram'
-                                        img='src/assets/IG_brand_asset_pack_2023/Instagram_Glyph_White.png'/> <br/>
+                                        img='/assets/IG_brand_asset_pack_2023/Instagram_Glyph_White.png'/> <br/>
                             <FormatLink link='https://www.youtube.com/channel/UC4QXq1XQZoY5Z5qZ4X6Z3jQ' text="YouTube"
-                                        img='src/assets/brand-monochrome-logos/yt_logo_mono_dark.png'/> <br/>
+                                        img='/assets/brand-monochrome-logos/yt_logo_mono_dark.png'/> <br/>
                             <FormatLink link='https://www.twitter.com/cmink2040' text="Twitter"
-                                        img='src/assets/twitter-logo-01282021/Twitter logo/PNG/2021 Twitter logo - white.png'/>
+                                        img='/assets/twitter-logo-01282021/Twitter logo/PNG/2021 Twitter logo - white.png'/>
                             <br/>
                         </div>
                     </div>
