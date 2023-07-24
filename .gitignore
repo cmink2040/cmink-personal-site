@@ -11,7 +11,13 @@ node_modules
 dist
 dist-ssr
 *.local
-
+*.json
+*.lock
+*.md
+*.yml
+*.yaml
+*.tgz
+*.cjs
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
