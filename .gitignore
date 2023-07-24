@@ -24,6 +24,3 @@ dist-ssr
 *.sw?
 
 # Assets
-*.ico
-*.icns 
-*.png

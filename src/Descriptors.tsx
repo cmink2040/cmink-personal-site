@@ -1,5 +1,5 @@
 import 'tailwindcss/tailwind.css';
-import { useState, useEffect, useRef } from 'react';
+import {useEffect, useState} from 'react';
 
 const EndBar = () => {
     return(
@@ -14,9 +14,7 @@ const EndBar = () => {
     );
 }
 
-function NavBar(props: any) {
-    const [currentURL, updateURL] = useState(props)
-    props = props || {};
+function NavBar() {
     return (
 
         // import LOGO

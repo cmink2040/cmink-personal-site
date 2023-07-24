@@ -1,4 +1,9 @@
 import {EndBar} from './Descriptors.tsx'
+import {useEffect, useState} from 'react';
+
+import {BackgroundImage, LazyImage, LazyRender, SelectDropdownBar} from './reuseComps.tsx'
+import './Fonts.css';
+
 const Homepage = () => {
     const icons = [
         "src/assets/aifavicon.png",
@@ -35,38 +40,38 @@ const Homepage = () => {
         "src/assets/aifavicon.png",
     ];
     const command = [
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
 
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
 
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
-        console.log("Hello!"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
+        () => console.log("Hello"),
     ];
     const name = [
         "Details",
@@ -102,88 +107,151 @@ const Homepage = () => {
         "Details",
         "Details",
     ];
+    const supportedLanguages = [
+        "EN",
+        "日本語(JP)",
+        "中文(ZH)",
+    ];
 
-    return(
-    <div className='w-full h-screen text-center snap-mandatory snap-y  '>
-        <div className='bg-[url("src/assets/pex.png")] 
-        flex flex-col w-auto h-screen text-white text-center justify-center snap-center items-center'>
-            <h1 className='flex-row text-7xl '>CMinK</h1>
-            <p className='flex-row'> TSMKS x LMCHK </p>
-        </div>
-        <div className='w-auto px-4 h-screen text-center 
-        grid grid-cols-1 snap-center items-center'>
-            <h1 className=' text-3xl w-full'>About</h1>
-            <div className='grid grid-cols-3 align-content-center justify-items-center gap-2 '>
-                <div className= 'bg-gray-800 text-white text-center w-4/5 py-32 px-2 rounded-lg'> 
-                 Introduction: <br/>
-                Hello, I am CMinK. I am a tech enthusiast. I specialize in software development, AI Engineering, and website development.
-                In my freetime, I enjoy building PCs and assembling hardware.
+    const [lang, setLang] = useState('EN');
+    useEffect(() => {
+        if (lang === 'EN') {
+            document.title = "CMinK";
+            document.documentElement.lang = "en";
+        } else if (lang === '日本語(JP)') {
+            document.title = "ミンク";
+            document.documentElement.lang = "ja";
+        } else if (lang === '中文(ZH)') {
+            document.title = "陈明";
+            document.documentElement.lang = "zh";
+        }
+    }, [lang]);
+    const setTemp = (option: any) => {
+        console.log("Parent was called! ", option)
+        setLang(option);
+    }
+
+    return (
+        <div className='w-full text-center h-screen snap-mandatory snap-y '>
+            <div
+                className='w-full grid grid-cols-2 slideT-in z-50 bg-transparent absolute px-16 py-8 font-bold SpecialFont'>
+                <div className='text-white col-span-1 justify-start text-start'> Copyright &copy; 2023 CMinK</div>
+                <div className='col-span-1 justify-end text-end'>
+                    {
+                        supportedLanguages.includes(lang) ?
+                            <SelectDropdownBar className="text-white hover:cursor-pointer" defaultValue={lang}
+                                               selectOpt={supportedLanguages} setParent={setTemp}/> :
+                            <SelectDropdownBar className="text-white " defaultValue='EN'
+                                               selectOpt={supportedLanguages} setParent={setTemp}/>
+                    }
+                </div>
+            </div>
+            <BackgroundImage src='src/assets/pex.png'
+                             className='w-full h-screen z-20 text-center flex-col flex snap-center fadein justify-center'
+                             ImageClassName='absolute -z-50 top-0 left-0 w-full h-screen object-cover'
+                             alt='background'>
+                <h1 className='flex-row text-7xl text-white '>CMinK</h1>
+                <p className='flex-row text-white'> TSMKS x LMCHK </p>
+            </BackgroundImage>
+
+
+            <div className='w-full snap-center fadein'>
+                <div className='flex flex-col align-content-center justify-items-center w-full'>
+                    <div className='bg-gray-800 w-full p-16'>
+                        <div className='text-2xl text-center text-white'>
+                            Introduction
                         </div>
-                <div className= 'bg-gray-800 text-white text-center w-4/5 py-32 px-2 rounded-lg'>
-                     Contact Information: <br/>
-                        Personal Email: cmink2040@gmail.com <br/>
-                        Work Emails: cmink@starlightpath.studio | cmink@tsmks.com <br/>
-                        Phone Number: +1(707)-774-9127 <br/>
-                    </div>
-                 <div className= 'bg-gray-800 text-white text-center w-4/5 py-32 px-2 rounded-lg'>
-                     Social Media <br/>
-                        <FormatLink link='https://www.linkedin.com/in/cmin-k-8b0b3b1b0/' text='LinkedIn'/> <br/>
-                        <FormatLink link='https://www.github.com/cmink2040' text='Github'/> <br/>
-                        <FormatLink link='https://www.instagram.com/cmink2040/' text='Instagram'/> <br/>
-                        <FormatLink link='https://www.youtube.com/channel/UC4QXq1XQZoY5Z5qZ4X6Z3jQ' text="YouTube"/> <br/>
-                        <FormatLink link='https://www.twitter.com/cmink2040' text="Twitter"/> <br/>
-                 </div>
-            </div>
-        </div>
+                        <br/>
 
-        <div className='w-auto px-4 h-screen text-center 
-        grid grid-cols-5 snap-center items-center' >
-            <h1 className='grid  text-3xl align-center text-center justify-items-center'>Projects</h1>
-            <div className='col-span-4 grid grid-cols-1 align-content-center justify-items-center gap-2 '>
-                <div className= 'bg-gray-800 text-white text-center w-full mx-2 py-4 px-32 rounded-lg'> 
-                Projects <br/>
-                My full list of my projects can be found here:
+                        <div className='text-center text-sm text-white'>
+                            Hello, I am CMinK. I am a tech enthusiast. I specialize in software development, AI
+                            Engineering, and
+                            website development. In my freetime, I enjoy building PCs and assembling hardware.
                         </div>
-                <div className= 'bg-gray-800 text-white text-center w-full py-4 px-32 rounded-lg'>
-                     Current Projects <br/> AI NT Model(StarlightX), SkyGate Media(TSMKS), Website(CMinK)
                     </div>
-                 <div className= 'bg-gray-800 text-white text-center w-full py-4 px-32 rounded-lg'>
-                     Resume <br/>
-                        
-                 </div>
-            </div>
-        </div>
 
-        <div className='w-auto px-4 mx-2 h-screen text-center gap-2 place-content-center 
-        grid grid-cols-10 snap-center items-center' >
-            <h1 className='grid col-span-10 text-3xl align-center text-center justify-items-center '>MENU</h1>
-            {
-                 Array.from({ length: 30 }).map((_, i) => (
-                    <FormatSquare key={i} name={name[i]} icon={icons[i]} command={command[i]} />
-                ))
-            }
 
-                
-        
+                    <div className='bg-black text-center w-full fadein pt-8'>
+                        <div className='grid grid-cols-2'>
+                            <LazyRender className='col-span-1 text-white' direction='slideR-in'>
+                                cmink2040@gmail.com <br/>
+                                +1(707)-774-9127 <br/>
+                            </LazyRender>
+                            <LazyRender className='col-span-1 text-white' direction='slideL-in'>
+                                cmink@starlightpath.studio <br/>
+                                cmink@tsmks.com <br/>
+                                +1(416)-123-1234<br/>
+                            </LazyRender>
+                        </div>
+
+                        Social Media <br/>
+                        <div className='flex flex-row align-center justify-center space-x-2 px-16 py-8'>
+                            <FormatLink link='https://www.linkedin.com/in/ming-chen-475a3b275/' text='LinkedIn'
+                                        img='src/assets/linkedin-logos/In-White-128.png'/> <br/>
+                            <FormatLink link='https://www.github.com/cmink2040' text='Github'
+                                        img='src/assets/github-mark/github-mark-white.png'/> <br/>
+                            <FormatLink link='https://www.instagram.com/cmink2040/' text='Instagram'
+                                        img='src/assets/IG_brand_asset_pack_2023/Instagram_Glyph_White.png'/> <br/>
+                            <FormatLink link='https://www.youtube.com/channel/UC4QXq1XQZoY5Z5qZ4X6Z3jQ' text="YouTube"
+                                        img='src/assets/brand-monochrome-logos/yt_logo_mono_dark.png'/> <br/>
+                            <FormatLink link='https://www.twitter.com/cmink2040' text="Twitter"
+                                        img='src/assets/twitter-logo-01282021/Twitter logo/PNG/2021 Twitter logo - white.png'/>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
             </div>
-        <EndBar/>
-    </div>);
+
+            <div className='w-auto px-4 text-center
+        grid grid-cols-5 snap-center items-center'>
+                <h1 className='grid  text-3xl align-center text-center justify-items-center'>Projects</h1>
+                <div className='col-span-4 grid grid-cols-1 align-content-center justify-items-center gap-2 '>
+                    <div className='bg-gray-800 text-white text-center w-full mx-2 '>
+                        Projects <br/>
+                        My full list of my projects can be found here:
+                    </div>
+                    <div className='bg-gray-800 text-white text-center w-full py-4 px-32 '>
+                        Current Projects <br/> AI NT Model(StarlightX), SkyGate Media(TSMKS), Website(CMinK)
+                    </div>
+                    <div className='bg-gray-800 text-white text-center w-full py-4 px-32 '>
+                        Resume <br/>
+
+                    </div>
+                </div>
+            </div>
+
+            <div className='w-auto bg-black text-center gap-2 place-content-center
+        grid grid-cols-9 snap-center items-center'>
+                <h1 className='grid col-span-9 text-3xl align-center text-center justify-items-center content-center'>MENU</h1>
+                {
+                    Array.from({length: 18}).map((_, i) => (
+                        <FormatSquare key={i} name={name[i]} icon={icons[i]} command={command[i]}/>
+                    ))
+                }
+
+
+            </div>
+            <EndBar/>
+        </div>);
 }
 const FormatSquare = (props: any) => {
     return (
-        <div className= 'grid col-span-1 text-white justify-items-center aspect-square bg-gray-800 \
+        <div className='flex flex-col text-white justify-items-center aspect-square border border-gray-800
         hover:cursor-pointer hover:bg-gray-400 content-center rounded-lg py-2\
-        transition duration-300'
-        onClick = {props.command}>
-        <img src={props.icon} className='w-auto h-3/5 mx-5 mt-5 rounded-2xl' alt='icon'/>
-        <p className='text-center pb-2 text-sm'>        {props.name} </p>
+        transition duration-300'>
+            {/*onClick = {props.command}>*/}
+            <LazyImage src={props.icon} className='w-auto h-3/5 mx-5 mt-5 rounded-2xl' alt='icon'/>
+            <p className='text-center pb-2 text-sm'>        {props.name} </p>
 
-       </div>
+        </div>
     );
 }
 const FormatLink = (props: any) => {
     return (
-        <a href={props.link} className='text-blue-400 hover:text-blue-100 underline'>{props.text}</a>
+        <a href={props.link} className='text-blue-400 col-span-1 p-3 border
+         border-1 border-gray-600 rounded hover:bg-gray-500'>
+            <LazyImage src={props.img} alt='icon' className='h-5'/>
+        </a>
     );
 }
 export default Homepage
