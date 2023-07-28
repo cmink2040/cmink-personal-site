@@ -1,6 +1,5 @@
-import {EndBar} from './Descriptors.tsx'
 import {useEffect, useState} from 'react';
-
+import * as Windows from './Windows.tsx';
 import {BackgroundImage, LazyImage, LazyRender, SelectDropdownBar} from './reuseComps.tsx'
 import './Fonts.css';
 
@@ -16,20 +15,7 @@ const Homepage = () => {
         aiDir,
         aiDir,
         aiDir,
-        aiDir,
 
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-
-        aiDir,
         aiDir,
         aiDir,
         aiDir,
@@ -41,72 +27,45 @@ const Homepage = () => {
         aiDir,
     ];
     const command = [
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
-        () => console.log("Hello"),
+        () => {setResumePage(true)},
+        () => {setSitePoliciesPage(true)},
+        () => {setContactPage(true)},
+        () => {setSiteInfoPage(true)},
+        () => {setUpdatesPage(true)},
+        () => {setBlogPage(true)},
+        () => {setTermsOfServicePage(true)},
+        () => {setTsmksPage(true)},
+        () => {setStarlightXPage(true)},
+        () => {setPrivacyPolicyPage(true)},
+        () => {setLmchkPage(true)},
+        () => {setFunStuffPage(true)},
+        () => {setLegalPage(true)},
+        () => {setGitlabPage(true)},
+        () => {setAnimePage(true)},
+        () => {setDiscordPage(true)},
+        () => {setYtPage(true)},
+        () => {setMyDreamPage(true)},
     ];
     const name = [
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
+        "Resume",
+        "Site Policies",
+        "Contact",
+        "Site Information",
+        "Updates",
+        "Blog",
+        "Terms of Service",
+        "TSMKS",
+        "StarlightX",
+        "Privacy Policy",
+        "LMCHK",
 
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
-        "Details",
+        "Fun Stuff",
+        "Legal",
+        "Gitlab",
+        "Anime",
+        "Discord",
+        "YT",
+        "My Dream",
     ];
     const supportedLanguages = [
         "EN",
@@ -131,9 +90,45 @@ const Homepage = () => {
         console.log("Parent was called! ", option)
         setLang(option);
     }
+    const [resumePage, setResumePage] = useState(false);
+    const [sitePoliciesPage, setSitePoliciesPage] = useState(false);
+    const [contactPage, setContactPage] = useState(false);
+    const [siteInfoPage, setSiteInfoPage] = useState(false);
+    const [updatesPage, setUpdatesPage] = useState(false);
+    const [blogPage, setBlogPage] = useState(false);
+    const [termsOfServicePage, setTermsOfServicePage] = useState(false);
+    const [tsmksPage, setTsmksPage] = useState(false);
+    const [starlightXPage, setStarlightXPage] = useState(false);
+    const [privacyPolicyPage, setPrivacyPolicyPage] = useState(false);
+    const [lmchkPage, setLmchkPage] = useState(false);
+    const [funStuffPage, setFunStuffPage] = useState(false);
+    const [legalPage, setLegalPage] = useState(false);
+    const [gitlabPage, setGitlabPage] = useState(false);
+    const [animePage, setAnimePage] = useState(false);
+    const [discordPage, setDiscordPage] = useState(false);
+    const [ytPage, setYtPage] = useState(false);
+    const [myDreamPage, setMyDreamPage] = useState(false);
 
     return (
         <div className='w-full text-center h-screen snap-mandatory snap-y '>
+            <Windows.default.ResumeWindow on={resumePage} setShow={setResumePage}/>
+            <Windows.default.SitePoliciesWindow on={sitePoliciesPage} setShow={setSitePoliciesPage}/>
+            <Windows.default.ContactWindow on={contactPage} setShow={setContactPage}/>
+            <Windows.default.SiteInfoWindow on={siteInfoPage} setShow={setSiteInfoPage}/>
+            <Windows.default.UpdatesWindow on={updatesPage} setShow={setUpdatesPage}/>
+            <Windows.default.BlogWindow on={blogPage} setShow={setBlogPage}/>
+            <Windows.default.TermsOfServiceWindow on={termsOfServicePage} setShow={setTermsOfServicePage}/>
+            <Windows.default.TsmksWindow on={tsmksPage} setShow={setTsmksPage}/>
+            <Windows.default.StarlightXWindow on={starlightXPage} setShow={setStarlightXPage}/>
+            <Windows.default.PrivacyPolicyWindow on={privacyPolicyPage} setShow={setPrivacyPolicyPage}/>
+            <Windows.default.LmchkWindow on={lmchkPage} setShow={setLmchkPage}/>
+            <Windows.default.FunStuffWindow on={funStuffPage} setShow={setFunStuffPage}/>
+            <Windows.default.LegalWindow on={legalPage} setShow={setLegalPage}/>
+            <Windows.default.GitlabWindow on={gitlabPage} setShow={setGitlabPage}/>
+            <Windows.default.AnimeWindow on={animePage} setShow={setAnimePage}/>
+            <Windows.default.DiscordWindow on={discordPage} setShow={setDiscordPage}/>
+            <Windows.default.YtWindow on={ytPage} setShow={setYtPage}/>
+            <Windows.default.MyDreamWindow on={myDreamPage} setShow={setMyDreamPage}/>
             <div
                 className='w-full grid grid-cols-2 slideT-in z-50 bg-transparent absolute px-16 py-8 font-bold SpecialFont'>
                 <div className='text-white col-span-1 justify-start text-start'> Copyright &copy; 2023 CMinK</div>
@@ -232,15 +227,14 @@ const Homepage = () => {
 
 
             </div>
-            <EndBar/>
         </div>);
 }
 const FormatSquare = (props: any) => {
     return (
         <div className='flex flex-col text-white justify-items-center aspect-square border border-gray-800
         hover:cursor-pointer hover:bg-gray-400 content-center rounded-lg py-2\
-        transition duration-300'>
-            {/*onClick = {props.command}>*/}
+        transition duration-300'
+            onClick = {props.command}>
             <LazyImage src={props.icon} className='w-auto h-3/5 mx-5 mt-5 rounded-2xl' alt='icon'/>
             <p className='text-center pb-2 text-sm'>        {props.name} </p>
 

@@ -3,3 +3,7 @@
     text-align: center;
     height: 20px;
 }
+
+.sans-serif {
+    font-family: 'Times New Roman','Helvetica', serif;
+}
