@@ -1,0 +1,47 @@
+.abs{
+    font-size: 0.8rem;
+    pointer-events:none;
+    white-space: nowrap;
+    color: #4f4f4f;
+    position: absolute;
+    top: 16px;
+    left: 10px;
+}
+.rev {
+    position: relative;
+    padding: 0.1rem 0;
+}
+
+.moveup {
+    animation: slideUp 0.5s ease-in-out;
+    font-size: 0.6rem;
+    color: #4f4f4f;
+    white-space: nowrap;
+    margin-top: 1px;
+
+    pointer-events:none;
+    position: absolute;
+    top: 2px;
+    left: 10px;
+}
+
+@keyframes slideUp {
+    0% {
+        font-size: 0.8rem;
+        top: 16px;
+        margin-top:0;
+    }
+    100% {
+        font-size: 0.6rem;
+        top: 2px;
+        margin-top:1px;
+    }
+
+}
+
+.default {
+    font-size: 0.8rem;
+    white-space: nowrap;
+    padding: 16px 0;
+
+}

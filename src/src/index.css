@@ -1,0 +1,7 @@
+@import "./Transitions.css";
+@import "./Fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
