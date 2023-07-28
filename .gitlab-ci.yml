@@ -1,0 +1,17 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  image: docker:latest
+  script:
+    - docker build -t your-docker-image-name:latest .
+
+deploy:
+  stage: deploy
+  image: docker:latest
+  script:
+    - docker run -d -p 80:80 your-docker-image-name:latest
+  only:
+    - main
