@@ -16,7 +16,6 @@ deploy:
   image: docker:latest
   tags:
     - shared
-    - deploy
   script:
     - docker run -d -p 80:80 cminkweb:v0
   only:
