@@ -5,12 +5,18 @@ stages:
 build:
   stage: build
   image: docker:latest
+  tags:
+    - shared
+    - build
   script:
     - docker build -t your-docker-image-name:latest .
 
 deploy:
   stage: deploy
   image: docker:latest
+  tags:
+    - shared
+    - deploy
   script:
     - docker run -d -p 80:80 your-docker-image-name:latest
   only:
