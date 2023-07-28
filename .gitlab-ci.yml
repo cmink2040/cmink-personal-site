@@ -9,7 +9,7 @@ build:
     - shared
     - build
   script:
-    - docker build -t your-docker-image-name:latest .
+    - docker build -t cminkweb:v0 .
 
 deploy:
   stage: deploy
@@ -18,6 +18,6 @@ deploy:
     - shared
     - deploy
   script:
-    - docker run -d -p 80:80 your-docker-image-name:latest
+    - docker run -d -p 80:80 cminkweb:v0
   only:
     - main
