@@ -19,6 +19,6 @@ deploy:
   script:
     - docker stop cminkweb || true
     - docker rm cminkweb || true
-    - docker run -d -p 80:80 443:443 cminkweb:v0 --name cminkweb
+    - docker run -d -p 80:80 -p 443:443 cminkweb:v0 --name cminkweb
   only:
     - main
