@@ -2,29 +2,29 @@ import {useEffect, useState} from 'react';
 import * as Windows from './Windows.tsx';
 import {BackgroundImage, LazyImage, LazyRender, SelectDropdownBar} from './reuseComps.tsx'
 import './Fonts.css';
-
 const aiDir = '/assets/aifavicon.png';
+import {H1} from './src/DefaultCSSTemplates.tsx';
 const Homepage = () => {
     const icons = [
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
+        '/layer-group-solid.svg',
+        '/receipt-solid.svg',
+        '/comments-regular.svg',
+        '/globe-solid.svg',
+        'business-time-solid.svg',
+        '/blog-solid.svg',
+        '/book-solid.svg',
+        'record-vinyl-solid.svg',
+        '/record-vinyl-solid.svg',
 
+        '/notes-medical-solid.svg',
+        '/record-vinyl-solid.svg',
+        '/face-smile-regular.svg',
+        '/scale-unbalanced-flip-solid.svg',
+        './gitlab.svg',
         aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
-        aiDir,
+        '/discord.svg',
+        '/assets/brand-monochrome-logos/yt_logo_mono_dark.png',
+        '/record-vinyl-solid.svg',
     ];
     const command = [
         () => {setResumePage(true)},
@@ -53,7 +53,7 @@ const Homepage = () => {
         "Site Information",
         "Updates",
         "Blog",
-        "Terms of Service",
+        "Projects Information",
         "TSMKS",
         "StarlightX",
         "Privacy Policy",
@@ -143,8 +143,8 @@ const Homepage = () => {
                 </div>
             </div>
             <BackgroundImage src='/assets/pex.png'
-                             className='w-full h-screen z-20 text-center flex-col flex snap-center fadein justify-center'
-                             ImageClassName='absolute -z-50 top-0 left-0 w-full h-screen object-cover'
+                             className='w-full h-screen  text-center flex-col flex snap-center justify-center'
+                             ImageClassName='absolute -z-50 top-0 left-0 object-cover'
                              alt='background'>
                 <h1 className='flex-row text-7xl text-white '>CMinK</h1>
                 <p className='flex-row text-white'> TSMKS x LMCHK </p>
@@ -153,16 +153,29 @@ const Homepage = () => {
 
             <div className='w-full snap-center fadein'>
                 <div className='flex flex-col align-content-center justify-items-center w-full'>
-                    <div className='bg-gray-800 w-full p-16'>
+                    <div className='bg-black border border-gray-600 border-l-0 border-r-0 border-t-0 w-full p-16'>
                         <div className='text-2xl text-center text-white'>
                             Introduction
                         </div>
                         <br/>
 
-                        <div className='text-center text-sm text-white'>
-                            Hello, I am CMinK. I am a tech enthusiast. I specialize in software development, AI
-                            Engineering, and
-                            website development. In my freetime, I enjoy building PCs and assembling hardware.
+                        <div className='text-start text-sm text-white fonts px-40'>
+                            <H1 className={'fonts'}> Who am I? </H1>
+                            CMinK(Chen Ming) is a full-stack developer at TSMKS and a software engineer and AI researcher at StarlightX.
+                            website development. He also is a member of the LMCHK, a group for his non-official, non-formal projects,
+                            and for fun research. <br/> <br/>
+
+                            CMinK dreams of creating a world where everything is connected and move the world forward fully
+                            to the cloud by 2040 through a combination of software, hardware, and AI technologies. <br/>
+
+                            <br/>
+
+                            <br/>
+                            <H1 className={'fonts'}> What do I do? </H1>
+                            While not working, CMinK enjoys playing video games, watching anime, and reading manga. He
+                            also enjoys catching up on the latest tech news and learning new things. <br/>
+
+                            <br/>
                         </div>
                     </div>
 
@@ -198,20 +211,16 @@ const Homepage = () => {
                 </div>
             </div>
 
-            <div className='w-auto px-4 text-center
+            <div className='w-auto px-4 text-center bg-black
         grid grid-cols-5 snap-center items-center'>
-                <h1 className='grid  text-3xl align-center text-center justify-items-center'>Projects</h1>
+                <H1 className='grid text-white align-center text-center justify-items-center'> Projects </H1>
                 <div className='col-span-4 grid grid-cols-1 align-content-center justify-items-center gap-2 '>
-                    <div className='bg-gray-800 text-white text-center w-full mx-2 '>
-                        Projects <br/>
+                    <div className='border border-gray-800 hover:bg-gray-800 transition duration-300 text-white text-center w-full mx-2 '>
+                       <H1> Work </H1>
                         My full list of my projects can be found here:
                     </div>
-                    <div className='bg-gray-800 text-white text-center w-full py-4 px-32 '>
-                        Current Projects <br/> AI NT Model(StarlightX), SkyGate Media(TSMKS), Website(CMinK)
-                    </div>
-                    <div className='bg-gray-800 text-white text-center w-full py-4 px-32 '>
-                        Resume <br/>
-
+                    <div className='border border-gray-800 text-white text-center w-full py-4 px-32 '>
+                      <H1>Current Projects</H1>  AI NT Model(StarlightX), SkyGate Media(TSMKS), Website(CMinK)
                     </div>
                 </div>
             </div>

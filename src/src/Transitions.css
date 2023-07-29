@@ -110,3 +110,11 @@
     visibility: hidden;
     opacity: 0;
 }
+
+.fonts {
+    font-family: cursive;
+}
+
+.cursiveFong {
+    font-family: 'Comic Sans MS', 'Comic Sans' , cursive ;
+}

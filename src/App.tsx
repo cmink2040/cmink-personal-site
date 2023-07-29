@@ -2,6 +2,7 @@ import {useState} from 'react'
 import {NavBar, WordSequence} from './Descriptors.tsx'
 import Homepage from './hompage.tsx'
 import 'tailwindcss/tailwind.css';
+import {BackgroundImage} from "./reuseComps.tsx";
 
 function App() {
     const [complete, setState] = useState(false)
@@ -17,7 +18,14 @@ function App() {
                     "Welcome to my website. ",]}
                               typing={60} ending={1500} reloadSpeed={500} status={exec}
                 />
-                {(complete) ? <Main/> : <></>}
+                {(complete) ? <Main/> :
+
+                    <BackgroundImage src='/assets/pex.png'
+                                     className='fixed w-full h-screen -z-20 text-center flex-col flex snap-center justify-center'
+                                     ImageClassName='absolute -z-50 top-0 left-0 object-cover'
+                                     alt='background'/>
+
+                }
             </div>
         </div>
     )
@@ -26,6 +34,7 @@ const Main = () => {
     return (
 
         <div className='w-full'>
+
             <NavBar/>
             <Homepage/>
         </div>

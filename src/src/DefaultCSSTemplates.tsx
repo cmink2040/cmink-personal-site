@@ -1,24 +1,24 @@
-
+import './working.css';
 const H1 = (props: any) => {
     return (
-        <h1 className={'text-3xl ' + props.className}>{props.children}</h1>
+        <div className={'text-2xl cursiveFong'}>{props.children}</div>
     )
 }
 const H2 = (props: any) => {
     return (
-        <h2 className={'text-2xl '+props.className}>{props.children}</h2>
+        <h2 className={'text-lg '+props.className}>{props.children}</h2>
     )
 }
 
 const H3 = (props: any) => {
     return (
-        <h3 className={'text-lg '+props.className}>{props.children}</h3>
+        <h3 className={'text-md '+props.className}>{props.children}</h3>
     )
 }
 
 const H4 = (props: any) => {
     return (
-        <h4 className={'text-md'+props.className}>{props.children}</h4>
+        <h4 className={'text-sm '+props.className}>{props.children}</h4>
     )
 }
 

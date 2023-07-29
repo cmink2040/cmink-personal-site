@@ -60,7 +60,7 @@ const TypingText = (props:TypingTextProps) => {
   }, [text, currentIndex, words]);
 
   if(text.length > 0)
-  return <h1 className='text-3xl'>{text}</h1>;
+  return <h1 className='text-3xl text-white'>{text}</h1>;
     else
   return;
 };
