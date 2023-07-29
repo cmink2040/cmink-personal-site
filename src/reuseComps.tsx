@@ -1,6 +1,7 @@
 import {MutableRefObject, useEffect, useRef, useState} from 'react';
 import './Transitions.css';
 
+
 const SelectDropdownBar = (props: any) => {
     const [open, setOpen] = useState(false);
     const componentRef = useRef() as MutableRefObject<HTMLDivElement>;
