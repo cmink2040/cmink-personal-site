@@ -17,6 +17,8 @@ deploy:
   tags:
     - shared
   script:
-    - docker run -d -p 80:80 cminkweb:v0
+    - docker stop cminkweb || true
+    - docker rm cminkweb || true
+    - docker run -d -p 80:80 443:443 cminkweb:v0 --name cminkweb
   only:
     - main
