@@ -1,17 +1,81 @@
-import CloseWindow from './src/CloseableWindow.tsx';
-import './Transitions.css';
-import {H1, H2, H3, H4, L} from './src/DefaultCSSTemplates.tsx';
-import './src/CloseableWindow.css'
-import {useState} from "react";
+import '../CSS/Transitions.css';
+import {H1, H2, H3, H4, L} from '../Reuseable_Components/DefaultCSSTemplates.tsx';
+import './CloseableWindow.css'
+import {ReactNode, useState} from "react";
+import CloseableWindow from "./CloseableWindow.tsx";
 
-const ResumeWindow = (props:any) => {
+type WindowManagerProps = {
+    window: string;
+    on: boolean;
+    setShow: (show: boolean) => void;
+}
+
+type json_window_type = {
+
+    'RESUME': ReactNode;
+    'SITE_POLICY': ReactNode;
+    'CONTACT': ReactNode;
+    'SITE_POLICIES': ReactNode;
+    'SITE_INFO': ReactNode;
+    'UPDATES': ReactNode;
+    'BLOG': ReactNode;
+
+    'TOS': ReactNode;
+    'TSMKS': ReactNode;
+    'STARLIGHT': ReactNode;
+
+    'PRIVACY_POLICY': ReactNode;
+    'LMCHK': ReactNode;
+    'FUN_STUFF': ReactNode;
+    'LEGAL': ReactNode;
+    'GITLAB': ReactNode;
+    'ANIME': ReactNode;
+    'DISCORD': ReactNode;
+    'YT': ReactNode;
+    'MY_DREAM': ReactNode;
+
+
+}
+const WindowManager = (props:WindowManagerProps) => {
+    const windows: json_window_type = {
+        'RESUME': <ResumeWindow />,
+        'SITE_POLICY': <SitePolicyWindow />,
+        'CONTACT': <ContactWindow />,
+        'SITE_POLICIES': <SitePoliciesWindow />,
+        'SITE_INFO': <SiteInfoWindow />,
+        'UPDATES': <UpdatesWindow />,
+
+        'BLOG': <BlogWindow />,
+        'TOS': <TermsOfServiceWindow />,
+        'TSMKS': <TsmksWindow />,
+        'STARLIGHT': <StarlightXWindow />,
+        'PRIVACY_POLICY': <PrivacyPolicyWindow />,
+        'LMCHK': <LmchkWindow />,
+        'FUN_STUFF': <FunStuffWindow />,
+        'LEGAL': <LegalWindow />,
+        'GITLAB': <GitlabWindow />,
+        'ANIME': <AnimeWindow />,
+        'DISCORD': <DiscordWindow />,
+        'YT': <YtWindow />,
+
+        'MY_DREAM': <MyDreamWindow />,
+
+    }
+    const Window = windows[props.window] as ReactNode;
     return (
-        <CloseWindow id={'RESUME'} show={props.on} setShow={props.setShow}>
+       <CloseableWindow show={props.on} setShow={props.setShow} id={'Single_Window'}>
+           {Window}
+       </CloseableWindow>
+    )
+}
+const ResumeWindow = () => {
+    return (
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
                     <H1 >
                         My Resume
                     </H1>
+
                     <br/>
                     <div >
                         <H2> Download my CV and Resume here! </H2>
@@ -19,26 +83,22 @@ const ResumeWindow = (props:any) => {
                         <L>public.source.tsmks.com/cmk/cv</L>
                         <br/>
 
-                        <H2> Futher information can be found there. </H2>
+                        <H2> Further information can be found there. </H2>
                     </div>
                 </div>
 
             </div>
-        </CloseWindow>
     )
 };
-const SitePolicyWindow = (props:any) => {
+const SitePolicyWindow = () => {
     return (
-        <CloseWindow show={props.on}  setShow={props.setShow}>
             <div className={'flex flex-col items-center justify-center w-3/5 h-screen bg-gray-400'}>
                 Legal Info
             </div>
-        </CloseWindow>
     )
 }
-const ContactWindow = (props:any) => {
+const ContactWindow = () => {
     return (
-        <CloseWindow id={'conwin'} show={props.on} setShow={props.setShow}>
         <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
             <div className={'text-md sans-serif pt-8 text-start'}>
                 <H1 >
@@ -61,12 +121,10 @@ const ContactWindow = (props:any) => {
             </div>
 
         </div>
-    </CloseWindow>
     )
 }
-const SitePoliciesWindow = (props:any) => {
+const SitePoliciesWindow = () => {
       return (
-        <CloseWindow id={'spw'} show={props.on}  setShow={props.setShow}>
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black overflow-y-auto h-screen text-white" >
                 <div className={'text-2xl' }
                >
@@ -110,13 +168,11 @@ const SitePoliciesWindow = (props:any) => {
 
 
             </div>
-        </CloseWindow>
     )
 }
 
-const SiteInfoWindow = (props:any) => {
+const SiteInfoWindow = () => {
     return (
-        <CloseWindow id={'SIW'} show={props.on} setShow={props.setShow}>
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
                     <H1 >
@@ -141,12 +197,10 @@ const SiteInfoWindow = (props:any) => {
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
-const UpdatesWindow = (props:any) => {
+const UpdatesWindow = () => {
     return (
-        <CloseWindow id={'UW'} show={props.on} setShow={props.setShow}>
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
                     <H1 >
@@ -160,12 +214,10 @@ const UpdatesWindow = (props:any) => {
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
-const BlogWindow = (props:any) => {
+const BlogWindow = () => {
     return (
-        <CloseWindow id={'BW'} show={props.on} setShow={props.setShow}>
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
                    <H1>
@@ -182,12 +234,10 @@ const BlogWindow = (props:any) => {
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
-const TermsOfServiceWindow = (props:any) => {
+const TermsOfServiceWindow = () => {
     return (
-        <CloseWindow id={'TOS'} show={props.on} setShow={props.setShow}>
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
                     <H1>
@@ -230,38 +280,32 @@ const TermsOfServiceWindow = (props:any) => {
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
-const TsmksWindow = (props:any) => {
+const TsmksWindow = () => {
     return (
-        <CloseWindow id={'TSMKS'} show={props.on} setShow={props.setShow}>
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
                     This square is being updated. Maybe it will be out in the next update. <br/>
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
 
-const StarlightXWindow = (props:any) => {
+const StarlightXWindow = () => {
     return (
-        <CloseWindow id={'Starlight'} show={props.on} setShow={props.setShow}>
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
                     This square is being updated. Maybe it will be out in the next update. <br/>
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
 
-const PrivacyPolicyWindow = (props:any) => {
+const PrivacyPolicyWindow = () => {
     return (
-        <CloseWindow id={'PrivacyPolicy'} show={props.on} setShow={props.setShow}>
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
                     <H1 >
@@ -284,13 +328,11 @@ const PrivacyPolicyWindow = (props:any) => {
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
 
-const LmchkWindow = (props:any) => {
+const LmchkWindow = () => {
     return (
-        <CloseWindow id={'LMCHK'} show={props.on} setShow={props.setShow}>
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
                     This square is being updated. Maybe it will be out in the next update. <br/>
@@ -298,26 +340,22 @@ const LmchkWindow = (props:any) => {
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
 
-const FunStuffWindow = (props:any) => {
+const FunStuffWindow = () => {
     return (
-        <CloseWindow id={'FSW'} show={props.on} setShow={props.setShow}>
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
                     This square is being updated. Maybe it will be out in the next update. <br/>
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
 
-const LegalWindow = (props:any) => {
+const LegalWindow = () => {
     return (
-        <CloseWindow id={'LW'} show={props.on} setShow={props.setShow}>
 
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
@@ -325,13 +363,11 @@ const LegalWindow = (props:any) => {
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
 
-const GitlabWindow = (props:any) => {
+const GitlabWindow = () => {
     return (
-        <CloseWindow id={'GITLAB'} show={props.on} setShow={props.setShow}>
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
                     <H1 >
@@ -354,7 +390,6 @@ const GitlabWindow = (props:any) => {
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
 const ImageHover = (props:any) => {
@@ -384,9 +419,8 @@ const ImageHover = (props:any) => {
     );
 }
 
-const AnimeWindow = (props:any) => {
+const AnimeWindow = () => {
     return (
-        <CloseWindow id={'Anime'} show={props.on} setShow={props.setShow}>
 
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
@@ -433,13 +467,11 @@ const AnimeWindow = (props:any) => {
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
 
-const DiscordWindow = (props:any) => {
+const DiscordWindow = () => {
     return (
-        <CloseWindow id={'DISCORD'} show={props.on} setShow={props.setShow}>
 
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
@@ -447,13 +479,11 @@ const DiscordWindow = (props:any) => {
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
 
-const YtWindow = (props:any) => {
+const YtWindow = () => {
     return (
-        <CloseWindow id={'YTLIVE'} show={props.on} setShow={props.setShow}>
 
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
@@ -461,13 +491,11 @@ const YtWindow = (props:any) => {
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
 
-const MyDreamWindow = (props:any) => {
+const MyDreamWindow = () => {
     return (
-        <CloseWindow id={'DREAM'} show={props.on} setShow={props.setShow}>
 
             <div className="fadein flex flex-col pt-16 mx-64 px-16 bg-black border border-white overflow-y-auto h-screen text-white" >
                 <div className={'text-md sans-serif pt-8 text-start'}>
@@ -475,9 +503,7 @@ const MyDreamWindow = (props:any) => {
                 </div>
 
             </div>
-        </CloseWindow>
     )
 }
 
-export default {ResumeWindow, SitePolicyWindow, ContactWindow,SitePoliciesWindow, SiteInfoWindow, UpdatesWindow, BlogWindow, TermsOfServiceWindow, TsmksWindow, StarlightXWindow, PrivacyPolicyWindow, LmchkWindow, FunStuffWindow, LegalWindow, GitlabWindow, AnimeWindow, DiscordWindow, YtWindow, MyDreamWindow}
-
+export default WindowManager;

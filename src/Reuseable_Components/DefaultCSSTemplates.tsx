@@ -1,4 +1,4 @@
-import './working.css';
+import '../CSS/working.css';
 const H1 = (props: any) => {
     return (
         <div className={'text-2xl cursiveFong'}>{props.children}</div>

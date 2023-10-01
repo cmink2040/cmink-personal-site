@@ -1,6 +1,17 @@
-import {useState, useEffect} from 'react';
-import './Transitions.css';
-const CloseWindow = (props:any) => {
+import {useState, useEffect, ReactNode} from 'react';
+import '../CSS/Transitions.css';
+
+type CloseWindowProps = {
+    show: boolean;
+    setShow: (show: boolean) => void;
+    className?: string;
+    exitComponent?: ReactNode;
+    exitComponentClassName?: string;
+    id: string;
+    children: ReactNode;
+
+}
+const CloseWindow = (props:CloseWindowProps) => {
    const  handleKeyPress = (event:any) => {
         // Check if the key pressed is the "Enter" key (key code 13)
         if (event.key === 'Enter' || event.key==='Escape') {

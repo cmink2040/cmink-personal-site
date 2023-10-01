@@ -1,9 +1,13 @@
 import {useEffect, useState} from 'react';
-import * as Windows from './Windows.tsx';
-import {BackgroundImage, LazyImage, LazyRender, SelectDropdownBar} from './reuseComps.tsx'
-import './Fonts.css';
+
+import {BackgroundImage, LazyRender, SelectDropdownBar} from '../Reuseable_Components/reuseComps.tsx'
+import '../CSS/Fonts.css';
 const aiDir = '/assets/aifavicon.png';
-import {H1} from './src/DefaultCSSTemplates.tsx';
+import {H1} from '../Reuseable_Components/DefaultCSSTemplates.tsx';
+import WindowManager from "../Windows/Windows.tsx";
+
+import FormatSquare from "../Formats/FormatSquare.tsx";
+import FormatLink from "../Formats/FormatLink.tsx";
 const Homepage = () => {
     const icons = [
         '/layer-group-solid.svg',
@@ -27,24 +31,24 @@ const Homepage = () => {
         '/record-vinyl-solid.svg',
     ];
     const command = [
-        () => {setResumePage(true)},
-        () => {setSitePoliciesPage(true)},
-        () => {setContactPage(true)},
-        () => {setSiteInfoPage(true)},
-        () => {setUpdatesPage(true)},
-        () => {setBlogPage(true)},
-        () => {setTermsOfServicePage(true)},
-        () => {setTsmksPage(true)},
-        () => {setStarlightXPage(true)},
-        () => {setPrivacyPolicyPage(true)},
-        () => {setLmchkPage(true)},
-        () => {setFunStuffPage(true)},
-        () => {setLegalPage(true)},
-        () => {setGitlabPage(true)},
-        () => {setAnimePage(true)},
-        () => {setDiscordPage(true)},
-        () => {setYtPage(true)},
-        () => {setMyDreamPage(true)},
+        () => {setCurrentPage('RESUME'); setIsOpened(true)},
+        () => {setCurrentPage('SITE_POLICIES'); setIsOpened(true)},
+        () => {setCurrentPage('CONTACT');setIsOpened(true)},
+        () => {setCurrentPage('SITE_INFO');setIsOpened(true)},
+        () => {setCurrentPage('UPDATES');setIsOpened(true)},
+        () => {setCurrentPage('BLOG');setIsOpened(true)},
+        () => {setCurrentPage('PROJECTS_INFO');setIsOpened(true)},
+        () => {setCurrentPage('TSMKS');setIsOpened(true)},
+        () => {setCurrentPage('STARLIGHTX');setIsOpened(true)},
+        () => {setCurrentPage('PRIVACY_POLICY');setIsOpened(true)},
+        () => {setCurrentPage('LMCHK');setIsOpened(true)},
+        () => {setCurrentPage('FUN_STUFF');setIsOpened(true)},
+        () => {setCurrentPage('LEGAL');setIsOpened(true)},
+        () => {setCurrentPage('GITLAB');setIsOpened(true)},
+        () => {setCurrentPage('ANIME');setIsOpened(true)},
+        () => {setCurrentPage('DISCORD');setIsOpened(true)},
+        () => {setCurrentPage('YT');setIsOpened(true)},
+        () => {setCurrentPage('MY_DREAM');setIsOpened(true)},
     ];
     const name = [
         "Resume",
@@ -90,45 +94,15 @@ const Homepage = () => {
         console.log("Parent was called! ", option)
         setLang(option);
     }
-    const [resumePage, setResumePage] = useState(false);
-    const [sitePoliciesPage, setSitePoliciesPage] = useState(false);
-    const [contactPage, setContactPage] = useState(false);
-    const [siteInfoPage, setSiteInfoPage] = useState(false);
-    const [updatesPage, setUpdatesPage] = useState(false);
-    const [blogPage, setBlogPage] = useState(false);
-    const [termsOfServicePage, setTermsOfServicePage] = useState(false);
-    const [tsmksPage, setTsmksPage] = useState(false);
-    const [starlightXPage, setStarlightXPage] = useState(false);
-    const [privacyPolicyPage, setPrivacyPolicyPage] = useState(false);
-    const [lmchkPage, setLmchkPage] = useState(false);
-    const [funStuffPage, setFunStuffPage] = useState(false);
-    const [legalPage, setLegalPage] = useState(false);
-    const [gitlabPage, setGitlabPage] = useState(false);
-    const [animePage, setAnimePage] = useState(false);
-    const [discordPage, setDiscordPage] = useState(false);
-    const [ytPage, setYtPage] = useState(false);
-    const [myDreamPage, setMyDreamPage] = useState(false);
+
+    const [current_page, setCurrentPage] = useState('home');
+    const [is_opened, setIsOpened] = useState(false);
 
     return (
         <div className='w-full text-center h-screen snap-mandatory snap-y '>
-            <Windows.default.ResumeWindow on={resumePage} setShow={setResumePage}/>
-            <Windows.default.SitePoliciesWindow on={sitePoliciesPage} setShow={setSitePoliciesPage}/>
-            <Windows.default.ContactWindow on={contactPage} setShow={setContactPage}/>
-            <Windows.default.SiteInfoWindow on={siteInfoPage} setShow={setSiteInfoPage}/>
-            <Windows.default.UpdatesWindow on={updatesPage} setShow={setUpdatesPage}/>
-            <Windows.default.BlogWindow on={blogPage} setShow={setBlogPage}/>
-            <Windows.default.TermsOfServiceWindow on={termsOfServicePage} setShow={setTermsOfServicePage}/>
-            <Windows.default.TsmksWindow on={tsmksPage} setShow={setTsmksPage}/>
-            <Windows.default.StarlightXWindow on={starlightXPage} setShow={setStarlightXPage}/>
-            <Windows.default.PrivacyPolicyWindow on={privacyPolicyPage} setShow={setPrivacyPolicyPage}/>
-            <Windows.default.LmchkWindow on={lmchkPage} setShow={setLmchkPage}/>
-            <Windows.default.FunStuffWindow on={funStuffPage} setShow={setFunStuffPage}/>
-            <Windows.default.LegalWindow on={legalPage} setShow={setLegalPage}/>
-            <Windows.default.GitlabWindow on={gitlabPage} setShow={setGitlabPage}/>
-            <Windows.default.AnimeWindow on={animePage} setShow={setAnimePage}/>
-            <Windows.default.DiscordWindow on={discordPage} setShow={setDiscordPage}/>
-            <Windows.default.YtWindow on={ytPage} setShow={setYtPage}/>
-            <Windows.default.MyDreamWindow on={myDreamPage} setShow={setMyDreamPage}/>
+
+
+            <WindowManager window={current_page} on={is_opened} setShow={setIsOpened} />
             <div
                 className='w-full grid grid-cols-2 slideT-in z-50 bg-transparent absolute px-16 py-8 font-bold SpecialFont'>
                 <div className='text-white col-span-1 justify-start text-start'> Copyright &copy; 2023 CMinK</div>
@@ -142,6 +116,7 @@ const Homepage = () => {
                     }
                 </div>
             </div>
+
             <BackgroundImage src='/assets/pex.png'
                              className='w-full h-screen  text-center flex-col flex snap-center justify-center'
                              ImageClassName='absolute -z-50 top-0 left-0 object-cover'
@@ -161,9 +136,10 @@ const Homepage = () => {
 
                         <div className='text-start text-sm text-white fonts px-40'>
                             <H1 className={'fonts'}> Who am I? </H1>
-                            CMinK(Chen Ming) is a full-stack developer at TSMKS and a software engineer and AI researcher at StarlightX.
-                            website development. He also is a member of the LMCHK, a group for his non-official, non-formal projects,
-                            and for fun research. <br/> <br/>
+                            CMinK(Chen Ming) is a programmer at TSMKS. He is currently working on various of
+                            projects, including NN Models, websites and applications, and more. He also is a member of LMCHK,
+                            a group for his fun projects and research.
+                            <br/>
 
                             CMinK dreams of creating a world where everything is connected and move the world forward fully
                             to the cloud by 2040 through a combination of software, hardware, and AI technologies. <br/>
@@ -238,24 +214,5 @@ const Homepage = () => {
             </div>
         </div>);
 }
-const FormatSquare = (props: any) => {
-    return (
-        <div className='flex flex-col text-white justify-items-center aspect-square border border-gray-800
-        hover:cursor-pointer hover:bg-gray-400 content-center rounded-lg py-2\
-        transition duration-300'
-            onClick = {props.command}>
-            <LazyImage src={props.icon} className='w-auto h-3/5 mx-5 mt-5 rounded-2xl' alt='icon'/>
-            <p className='text-center pb-2 text-sm'>        {props.name} </p>
 
-        </div>
-    );
-}
-const FormatLink = (props: any) => {
-    return (
-        <a href={props.link} className='text-blue-400 col-span-1 p-3 border
-         border-1 border-gray-600 rounded hover:bg-gray-500'>
-            <LazyImage src={props.img} alt='icon' className='h-5'/>
-        </a>
-    );
-}
 export default Homepage
