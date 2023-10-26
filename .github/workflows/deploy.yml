@@ -16,7 +16,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14 # Specify the version of Node.js you want to use
+          node-version: 18 # Specify the version of Node.js you want to use
 
 
       - name: Install all dependencies
@@ -29,8 +29,9 @@ jobs:
 
       - name: Deploy to Cloudflare Pages
         run: |
-          npx wrangler deploy
+            npx wrangler pages  deploy ./dist --project-name=cmink-site
 
 
         env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID}}
