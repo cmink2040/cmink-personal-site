@@ -14,8 +14,6 @@ dist-ssr
 *.json
 *.lock
 *.md
-*.yml
-*.yaml
 *.tgz
 *.cjs
 # Editor directories and files
