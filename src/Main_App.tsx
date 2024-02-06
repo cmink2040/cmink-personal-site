@@ -14,7 +14,7 @@ function Main_App() {
             <div className="flex flex-col items-center justify-center w-full h-screen">
                 <WordSequence words={[
                     "",
-                    "Hello! I'm CMinK. ",
+                    "Hello! I'm SZeng. ",
                     "Welcome to my website. ",]}
                               typing={60} ending={1500} reloadSpeed={500} status={exec}
                 />

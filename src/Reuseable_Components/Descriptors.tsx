@@ -1,25 +1,13 @@
 import 'tailwindcss/tailwind.css';
 import {useEffect, useState} from 'react';
 
-const EndBar = () => {
-    return(
-        <div className='sticky flex flex-row justify-center items-center space-x-4 py-4 w-full'>
-        <p> Terms and Services</p>
-        <p> Privacy Policy</p>
-        <p> LMCHK Rules</p>
-        <p> TSMKS NET Rules</p>
-        <p> Legal</p>
-
-        </div>
-    );
-}
 
 function NavBar() {
     return (
 
         // import LOGO
         <div className='fixed flex justify-center items-center space-x-4 py-4 w-full'>
-            <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>CMinK</p>
+            <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>SZENG</p>
             <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>About</p>
             <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>Projects</p>
             <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>Menu</p>
@@ -110,7 +98,6 @@ function WordSequence(props: WordSequenceProps) {
 
   //Updates X when FeedBuffer is updated
     useEffect(() => {
-        console.log("SETX CALLED")
           setX((prevX) => [
             ...prevX,
             <TypingText
@@ -124,16 +111,12 @@ function WordSequence(props: WordSequenceProps) {
 
       //Updates main header when done, signialling completed
       useEffect(() => {
-        console.log("SIGNAL CALLED "+index+" "+text.length);
         if(index>=(text.length-1)) {
-        console.log("COMPLETED");
         (async () => { 
             await new Promise((resolve) => setTimeout(resolve, loadTime));
             props.status();
-            console.log("SIGNAL PASSED "+ index);
         })();
     }
-        console.log("SIGNAL FAILED "+ index );
         
       }, [x]);
 
@@ -146,4 +129,4 @@ function WordSequence(props: WordSequenceProps) {
 }
 
 
-export {NavBar, TypingText, WordSequence, EndBar};
+export {NavBar, TypingText, WordSequence};
