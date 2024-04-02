@@ -1,12 +1,7 @@
-import {useState} from 'react'
-import {NavBar, WordSequence} from './Reuseable_Components/Descriptors.tsx'
-import Homepage from './Pages/hompage.tsx'
+import {NavBar} from '../components/Descriptors'
+import Homepage from './index'
 
 function Main_App() {
-    const [complete, setState] = useState(false)
-    const exec = () => {
-        setState(true);
-    }
 
     return (
         <div className='w-full h-screen'>

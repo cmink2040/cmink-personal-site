@@ -1,13 +1,12 @@
 import {useEffect, useState} from 'react';
 
-import { SelectDropdownBar} from '../Reuseable_Components/reuseComps.tsx'
 import '../CSS/Fonts.css';
 const aiDir = '/assets/aifavicon.png';
-import {H1} from '../Reuseable_Components/DefaultCSSTemplates.tsx';
-import WindowManager from "../Windows/Windows.tsx";
+import {H1} from '../components/DefaultCSSTemplates';
+import WindowManager from "../components/Windows";
 
-import FormatSquare from "../Formats/FormatSquare.tsx";
-import FormatLink from "../Formats/FormatLink.tsx";
+import FormatSquare from "../components/Formats/FormatSquare";
+import FormatLink from "../components/Formats/FormatLink";
 const Homepage = () => {
     const icons = [
         '/layer-group-solid.svg',

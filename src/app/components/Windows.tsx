@@ -1,8 +1,8 @@
 import '../CSS/Transitions.css';
-import {H1, H2, H3, H4, L} from '../Reuseable_Components/DefaultCSSTemplates.tsx';
-import './CloseableWindow.css'
+import {H1, H2, H3, H4, L} from './DefaultCSSTemplates';
+import './CloseableWindow'
 import {ReactNode, useState} from "react";
-import CloseableWindow from "./CloseableWindow.tsx";
+import CloseableWindow from "./CloseableWindow";
 
 type WindowManagerProps = {
     window: string;
