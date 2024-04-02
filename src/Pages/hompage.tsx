@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 
-import {BackgroundImage, LazyRender, SelectDropdownBar} from '../Reuseable_Components/reuseComps.tsx'
+import { SelectDropdownBar} from '../Reuseable_Components/reuseComps.tsx'
 import '../CSS/Fonts.css';
 const aiDir = '/assets/aifavicon.png';
 import {H1} from '../Reuseable_Components/DefaultCSSTemplates.tsx';
@@ -78,20 +78,18 @@ const Homepage = () => {
     ];
 
     const [lang, setLang] = useState('EN');
+
+    document.title = "CMinK";
     useEffect(() => {
         if (lang === 'EN') {
-            document.title = "CMinK";
             document.documentElement.lang = "en";
-        } else if (lang === '日本語(JP)') {
-            document.title = "ミンク";
+        } else if (lang === '日本(JP)') {
             document.documentElement.lang = "ja";
         } else if (lang === '中文(ZH)') {
-            document.title = "陈明";
             document.documentElement.lang = "zh";
         }
     }, [lang]);
     const setTemp = (option: any) => {
-        console.log("Parent was called! ", option)
         setLang(option);
     }
 
@@ -103,30 +101,11 @@ const Homepage = () => {
 
 
             <WindowManager window={current_page} on={is_opened} setShow={setIsOpened} />
-            <div
-                className='w-full grid grid-cols-2 slideT-in z-50 bg-transparent absolute px-16 py-8 font-bold SpecialFont'>
-                <div className='text-white col-span-1 justify-start text-start'> Copyright &copy; 2023 CMinK</div>
-                <div className='col-span-1 justify-end text-end'>
-                    {
-                        supportedLanguages.includes(lang) ?
-                            <SelectDropdownBar className="text-white hover:cursor-pointer" defaultValue={lang}
-                                               selectOpt={supportedLanguages} setParent={setTemp}/> :
-                            <SelectDropdownBar className="text-white " defaultValue='EN'
-                                               selectOpt={supportedLanguages} setParent={setTemp}/>
-                    }
-                </div>
-            </div>
+   
+            <div className='w-full z-50 absolute font-bold SpecialFont text-white justify-start text-start'>  CMinK</div>
+   
 
-            <BackgroundImage src='/assets/pex.png'
-                             className='w-full h-screen  text-center flex-col flex snap-center justify-center'
-                             ImageClassName='absolute -z-50 top-0 left-0 object-cover'
-                             alt='background'>
-                <h1 className='flex-row text-7xl text-white '>CMinK</h1>
-                <p className='flex-row text-white'> TSMKS x LMCHK </p>
-            </BackgroundImage>
-
-
-            <div className='w-full snap-center fadein'>
+            <div className='w-full snap-center'>
                 <div className='flex flex-col align-content-center justify-items-center w-full'>
                     <div className='bg-black border border-gray-600 border-l-0 border-r-0 border-t-0 w-full p-16'>
                         <div className='text-2xl text-center text-white'>
@@ -134,9 +113,9 @@ const Homepage = () => {
                         </div>
                         <br/>
 
-                        <div className='text-start text-sm text-white fonts px-40'>
+                        <div className='text-start text-sm text-white fonts '>
                             <H1 className={'fonts'}> Who am I? </H1>
-                            CMinK(Chen Ming) is a programmer at TSMKS. He is currently working on various of
+                            Cmink is a programmer. He is currently working on various of
                             projects, including NN Models, websites and applications, and more. He also is a member of LMCHK,
                             a group for his fun projects and research.
                             <br/>
@@ -156,23 +135,15 @@ const Homepage = () => {
                     </div>
 
 
-                    <div className='bg-black text-center w-full fadein pt-8'>
-                        <div className='grid grid-cols-2'>
-                            <LazyRender className='col-span-1 text-white' direction='slideR-in'>
-                                cmink2040@gmail.com <br/>
-                                +1(707)-774-9127 <br/>
-                            </LazyRender>
-                            <LazyRender className='col-span-1 text-white' direction='slideL-in'>
-                                cmink@starlightpath.studio <br/>
-                                cmink@tsmks.com <br/>
-                                +1(416)-123-1234<br/>
-                            </LazyRender>
+                    <div className='bg-black text-center w-full '>
+                        <div className='flex flex-row text-white justify-center items-center'>
+                                cmink2040@gmail.com 
+                                +1(707)-774-9127 
                         </div>
-
-                        Social Media <br/>
-                        <div className='flex flex-row align-center justify-center space-x-2 px-16 py-8'>
+                        
+                        <div className='flex flex-row justify-center items-center'>
                             <FormatLink link='https://www.linkedin.com/in/ming-chen-475a3b275/' text='LinkedIn'
-                                        img='/assets/linkedin-logos/In-White-128.png'/> <br/>
+                                        img='/assets/linkedin-logos/In-White-128.png'/> 
                             <FormatLink link='https://www.github.com/cmink2040' text='Github'
                                         img='/assets/github-mark/github-mark-white.png'/> <br/>
                             <FormatLink link='https://www.instagram.com/cmink2040/' text='Instagram'
@@ -181,13 +152,14 @@ const Homepage = () => {
                                         img='/assets/brand-monochrome-logos/yt_logo_mono_dark.png'/> <br/>
                             <FormatLink link='https://www.twitter.com/cmink2040' text="Twitter"
                                         img='/assets/twitter-logo-01282021/Twitter logo/PNG/2021 Twitter logo - white.png'/>
-                            <br/>
-                        </div>
+                         
+                    </div>
+                    
                     </div>
                 </div>
             </div>
 
-            <div className='w-auto px-4 text-center bg-black
+            <div className='w-auto  text-center bg-black
         grid grid-cols-5 snap-center items-center'>
                 <H1 className='grid text-white align-center text-center justify-items-center'> Projects </H1>
                 <div className='col-span-4 grid grid-cols-1 align-content-center justify-items-center gap-2 '>
@@ -195,7 +167,7 @@ const Homepage = () => {
                        <H1> Work </H1>
                         My full list of my projects can be found here:
                     </div>
-                    <div className='border border-gray-800 text-white text-center w-full py-4 px-32 '>
+                    <div className='border border-gray-800 text-white text-center w-full '>
                       <H1>Current Projects</H1>  AI NT Model(StarlightX), SkyGate Media(TSMKS), Website(CMinK)
                     </div>
                 </div>
