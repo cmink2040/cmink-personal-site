@@ -1,4 +1,5 @@
-import '../CSS/working.css';
+import '../styles/working.css';
+/*
 const H1 = (props: any) => {
     return (
         <div className={'text-2xl cursiveFong'}>{props.children}</div>
@@ -36,3 +37,4 @@ const L = (props: any) => {
 }
 
 export {H1, H2, H3, H4, P1, L};
+*/

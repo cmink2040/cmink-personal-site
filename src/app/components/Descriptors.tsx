@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 
 const EndBar = () => {
     return(
-        <div className='sticky flex flex-row justify-center items-center space-x-4 py-4 w-full'>
+        <div className='sticky flex flex-row justify-center items-center space-x-4 py-4 w-full  text-white'>
         <p> Terms and Services</p>
         <p> Privacy Policy</p>
         <p> LMCHK Rules</p>
@@ -16,16 +16,14 @@ const EndBar = () => {
 
 function NavBar() {
     return (
-
-        // import LOGO
-        <div className='fixed flex justify-center items-center space-x-4 py-4 w-full'>
-            <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>CMinK</p>
-            <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>About</p>
-            <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>Projects</p>
-            <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>Menu</p>
+        <div className='sticky top-0 w-full flex items-center space-x-4 p-2  bg-black text-white font-SfPro'>
+            <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer text-3xl'> ≡</p>
+            <p className='hover:font-bold hover:text-color-white hover:cursor-pointer text-center'>CMinK</p>
         </div>
     );
 }
+
+/*
 interface TypingTextProps{
 
     words: string;
@@ -147,3 +145,7 @@ function WordSequence(props: WordSequenceProps) {
 
 
 export {NavBar, TypingText, WordSequence, EndBar};
+
+*/
+
+export {NavBar}

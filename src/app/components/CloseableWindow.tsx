@@ -1,6 +1,6 @@
 import {useState, useEffect, ReactNode} from 'react';
-import '../CSS/Transitions.css';
-
+import '../styles/Transitions.css';
+/*
 type CloseWindowProps = {
     show: boolean;
     setShow: (show: boolean) => void;
@@ -55,3 +55,4 @@ const CloseWindow = (props:CloseWindowProps) => {
 };
 
 export default CloseWindow;
+*/

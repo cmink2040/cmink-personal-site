@@ -28,3 +28,6 @@ dist-ssr
 *.sw?
 
 # Assets
+.next
+next-env.d.ts
+dist
