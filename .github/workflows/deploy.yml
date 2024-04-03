@@ -17,19 +17,17 @@ jobs:
         run: |
           curl -fsSL https://bun.sh/install | bash 
 
-      - name: Source bun
-        run: source /home/runner/.bashrc 
       - name: Install all dependencies
         run: |
-          bun install
+          ~/.bun/bin/bun install
 
       - name: Build the source code
         run: |
-          bun run build
+          ~/.bun/bin/bun run build
 
       - name: Deploy to Cloudflare Pages
         run: |
-            npx wrangler pages  deploy ./dist --project-name=cmink-website
+            ~/.bun/bin/bunx wrangler pages  deploy ./dist --project-name=cmink-website
 
 
         env:
