@@ -4,6 +4,7 @@ export default function RootLayout({
     children: React.ReactNode
   }) {
     return (
+
         <html lang="en">
 
           <head>
@@ -11,7 +12,10 @@ export default function RootLayout({
             <title> CMinK </title>
           </head>
           <body>
-                <div id="root">{children}</div>
+                <div id="root">
+                  {children}
+                  
+                </div>
             </body>
         </html>
         

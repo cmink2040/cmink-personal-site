@@ -1,3 +1,6 @@
+//"noEmit": false, - disables any
+//"noEmitOnError": false, - disables any
+
 {
   "compilerOptions": {
     "target": "es5",
@@ -6,7 +9,9 @@
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "noEmit": false,
+    "noEmitOnError": false,
+
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
