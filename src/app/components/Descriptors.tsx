@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 
 const EndBar = () => {
     return(
-        <div className='sticky flex flex-row justify-center items-center space-x-4 py-4 w-full bg-black text-white'>
+        <div className='sticky flex flex-row justify-center items-center space-x-4 py-4 w-full  text-white'>
         <p> Terms and Services</p>
         <p> Privacy Policy</p>
         <p> LMCHK Rules</p>
@@ -18,7 +18,7 @@ function NavBar() {
     return (
 
         // import LOGO
-        <div className='fixed flex justify-center items-center space-x-4 py-4 w-full bg-black'>
+        <div className='sticky flex items-center space-x-4 p-2  bg-black text-white font-SfPro'>
             <p className='hover:font-bold hover:text-color-white hover:cursor-pointer'>CMinK</p>
             <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>About</p>
             <p className='hover:font-bold hover:text-color-gray-800 hover:cursor-pointer'>Projects</p>

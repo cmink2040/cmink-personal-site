@@ -1,0 +1,24 @@
+@import "./Transitions.css";
+
+@tailwind base;
+
+
+
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+@layer base {
+    @font-face {
+      font-family: Sf-Pro;
+      font-weight: 400;
+      src: url(/fonts/SF-Pro.ttf) format("ttf");
+    /*  src: url(https://fonts.gstatic.com/s/opensans/v40/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWtE6F15M.woff2) format('woff2'); */
+
+    }
+  }
+
+
+
