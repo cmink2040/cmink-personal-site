@@ -1,9 +1,10 @@
 'use client'
- 
+
 import Link from 'next/link'
 import React from 'react'
 
 const App = () => {
+  
     const TCN = "border border-slate-700 px-8 py-4"
     return (
         <div className='bg-black text-white px-2'>
