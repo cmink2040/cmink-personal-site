@@ -2,10 +2,20 @@
 
 import Link from 'next/link'
 import React from 'react'
+import { Tooltip, TooltipContent, TooltipTrigger } from 'src/app/components/Tooltip'
+
+const ReuseTool = (props: any) => {
+    return (
+      <Tooltip>
+          <TooltipTrigger> {props.num }</TooltipTrigger>
+          <TooltipContent className="text-white"> {props.desc }</TooltipContent>
+      </Tooltip>
+    )
+}
 
 const App = () => {
   
-    const TCN = "border border-slate-700 px-8 py-4"
+    const TCN = "border border-slate-700 px-8 py-4 text-white"
     return (
         <div className='bg-black text-white px-2'>
            <div className='font-bold text-2xl'> Academic Record </div>
@@ -60,12 +70,12 @@ const App = () => {
   <tbody>
     <tr>
       <td className={TCN}>CHEM</td>
-      <td className={TCN}>1120</td>
-      <td className={TCN}> 2210 </td>
-      <td className={TCN}> 2230 </td>
-      <td className={TCN}> 2410 </td>
-      <td className={TCN}> 4431 </td>
-      <td className={TCN}>4432</td>
+      <td className={TCN}> <ReuseTool  num="1120" desc="Principles of Chemistry II"/></td>
+      <td className={TCN}> <ReuseTool  num="2210" desc="Organic Chemistry I"/> </td>
+      <td className={TCN}> <ReuseTool  num="2230" desc="Organic Chemistry II"/>  </td>
+      <td className={TCN}> <ReuseTool  num="2410" desc="Organic Chemistry Lab"/>  </td>
+      <td className={TCN}> <ReuseTool  num="4431" desc="Chemical Thermodynamics"/>  </td>
+      <td className={TCN}><ReuseTool  num="4432" desc="Quantum Chemistry"/> </td>
       <td className={TCN}>5321</td>
       <td className={TCN}>5399</td>
 
@@ -76,20 +86,20 @@ const App = () => {
     </tr>
     <tr>
         <td className={TCN}>MATH</td>
-        <td className={TCN}>2560</td>
-        <td className={TCN}> 2700</td>
-        <td className={TCN}> 2850</td>
+        <td className={TCN}><ReuseTool  num="2560" desc="Differential Equations"/> </td>
+        <td className={TCN}> <ReuseTool  num="2700" desc="Linear Algebra"/> </td>
+        <td className={TCN}> <ReuseTool  num="2850" desc="Multivariable Calculus"/> </td>
         <td className={TCN+" text-center"} colSpan={2}></td>
-        <td className={TCN}> 5700</td>
+        <td className={TCN}> <ReuseTool  num="5700" desc="Introduction to Partial Differential Equations"/> </td>
 
 
 
     </tr>
     <tr>
     <td className={TCN}>ENGR</td>
-    <td className={TCN}>1300</td>
-    <td className={TCN}>2110</td>
-    <td className={TCN}>2120</td>
+    <td className={TCN}><ReuseTool  num="1300" desc="Introduction to Engineering Computing"/> </td>
+    <td className={TCN}><ReuseTool  num="2110" desc="Statics"/> </td>
+    <td className={TCN}><ReuseTool  num="2120" desc="Electrical Circuits"/> </td>
     <td className={TCN+" text-center"} colSpan={2}></td>
 
 
@@ -97,24 +107,24 @@ const App = () => {
     </tr>
     <tr>
     <td className={TCN}>ECE</td>
-    <td className={TCN}>2410</td>
-    <td className={TCN}>3320</td>
+    <td className={TCN}><ReuseTool  num="2410" desc="Principles of Electronic Instrumentation"/> </td>
+    <td className={TCN}><ReuseTool  num="3320" desc="Introduction to Digital Design"/> </td>
     <td className={TCN+" text-center"} colSpan={3}></td>
 
 
     </tr>
     <tr>
     <td className={TCN}>CS</td>
-    <td className={TCN}>2210</td>
-    <td className={TCN}>2230</td>
+    <td className={TCN}><ReuseTool  num="2210" desc="Discrete Structures"/> </td>
+    <td className={TCN}><ReuseTool  num="2230" desc="Data Structures"/> </td>
     <td className={TCN+" text-center"} colSpan={3}></td>
 
 
     </tr>
     <tr>
     <td className={TCN}>CHIN</td>
-    <td className={TCN}>2101</td>
-    <td className={TCN}>3101</td>
+    <td className={TCN}><ReuseTool  num="2101" desc="Second Year Chinese First-Semester"/> </td>
+    <td className={TCN}><ReuseTool  num="3101" desc="Third Year Chinese First Semester"/> </td>
     <td className={TCN+" text-center"} colSpan={3}></td>
 
 
@@ -123,35 +133,11 @@ const App = () => {
     <td className={TCN}>BMB</td>
 
     <td className={TCN+" text-center"} colSpan={5}></td>
-    <td className={TCN}>3120</td>
+    <td className={TCN}><ReuseTool  num="3120" desc="Introduction to Molecular Biology and Chemistry"/> </td>
 
     </tr>
   </tbody>
 </table>
-            <ul className='list-disc'>
-                        <li> Intro to Engineering Computing ENGR:1300 </li>
-                        <li> Statics ENGR:2110 </li>
-                        <li> Electrical Circuits ENGR:2120 </li>
-
-
-                        <li> Principles of Chemistry II CHEM:1120 </li>
-                        <li> Organic Chemistry I CHEM:2210 </li>
-                        <li> Organic Chemistry II CHEM:2220 </li>
-                        <li> Organic Chemistry Laboratory CHEM:2410 </li>
-                        <li> Physical Chemistry I CHEM:4431 </li>
-
-                        <li> Linear Algebra I MATH:2700 </li>
-                        <li> Calculus III | MATH:2850 </li>
-                        <li> Differential Equations | MATH:2560 </li>
-
-                        <li> Discrete Structures | CS:2210 </li>
-                        <li> Data Structures | CS:2230 </li>
-
-                        <li> Chinese Second Year First Semester | CHIN:2101 </li>
-
-
-
-                </ul>
             
             <div className='font-bold text-lg'>  West Senior High School </div>
 
