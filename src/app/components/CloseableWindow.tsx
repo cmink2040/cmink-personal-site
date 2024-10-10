@@ -1,4 +1,5 @@
 import {useState, useEffect, ReactNode} from 'react';
+
 import '../styles/Transitions.css';
 /*
 type CloseWindowProps = {

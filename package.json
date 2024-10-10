@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.26.24",
     "autoprefixer": "^10.4.14",
     "next": "^14.1.4",
     "postcss": "^8.4.25",
