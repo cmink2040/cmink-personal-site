@@ -47,12 +47,7 @@ const App = () => {
     <td className={TCN}>Senior</td>
 
     </tr>
-    <tr>
-    <td className={TCN}>GPA</td>
-    <td className={TCN}>3.81</td>
-    <td className={TCN}>3.94</td>
 
-    </tr>
   </tbody>
 </table>
 
@@ -61,7 +56,7 @@ const App = () => {
                     <tr>
                     <td className={TCN}>SUBJ</td>
                     <td className={TCN+" text-center"} colSpan={5}>Courses Taken</td>
-                    <td className={TCN+" text-center"} colSpan={3}>Projected Courses 2025</td>
+                    <td className={TCN+" text-center"} colSpan={4}>Projected Courses 2025</td>
 
 
                     </tr>
@@ -75,9 +70,13 @@ const App = () => {
       <td className={TCN}> <ReuseTool  num="2230" desc="Organic Chemistry II"/>  </td>
       <td className={TCN}> <ReuseTool  num="2410" desc="Organic Chemistry Lab"/>  </td>
       <td className={TCN}> <ReuseTool  num="4431" desc="Chemical Thermodynamics"/>  </td>
+      <td className={TCN}> <ReuseTool  num="3120" desc="Separations and Spectroscopy"/> </td>
+
       <td className={TCN}><ReuseTool  num="4432" desc="Quantum Chemistry"/> </td>
+
       <td className={TCN}>5321</td>
       <td className={TCN}>5399</td>
+      
 
 
 
@@ -90,7 +89,6 @@ const App = () => {
         <td className={TCN}> <ReuseTool  num="2700" desc="Linear Algebra"/> </td>
         <td className={TCN}> <ReuseTool  num="2850" desc="Multivariable Calculus"/> </td>
         <td className={TCN+" text-center"} colSpan={2}></td>
-        <td className={TCN}> <ReuseTool  num="5700" desc="Introduction to Partial Differential Equations"/> </td>
 
 
 
@@ -118,6 +116,7 @@ const App = () => {
     <td className={TCN}><ReuseTool  num="2210" desc="Discrete Structures"/> </td>
     <td className={TCN}><ReuseTool  num="2230" desc="Data Structures"/> </td>
     <td className={TCN+" text-center"} colSpan={3}></td>
+    <td className={TCN+" text-center"}><ReuseTool num="4700" desc="Parallel Computing"/></td>
 
 
     </tr>
@@ -130,10 +129,10 @@ const App = () => {
 
     </tr>
     <tr>
-    <td className={TCN}>BMB</td>
+    <td className={TCN}>PHYS</td>
 
     <td className={TCN+" text-center"} colSpan={5}></td>
-    <td className={TCN}><ReuseTool  num="3120" desc="Introduction to Molecular Biology and Chemistry"/> </td>
+    <td className={TCN}><ReuseTool  num="2704" desc="Physics IV"/> </td>
 
     </tr>
   </tbody>
@@ -165,12 +164,6 @@ const App = () => {
     <td className={TCN}>Standing</td>
     <td className={TCN}>Senior</td>
     <td className={TCN}>Senior</td>
-
-    </tr>
-    <tr>
-    <td className={TCN}>GPA</td>
-    <td className={TCN}>3.89</td>
-    <td className={TCN}>3.94</td>
 
     </tr>
   </tbody>
