@@ -54,9 +54,7 @@ const Homepage = () => {
                             <FormatLink link='https://www.github.com/cmink2040' text='Github'
                                         img='/assets/github-mark/github-mark-white.png'/>
 
-                            <FormatLink link='https://www.youtube.com/channel/UC4QXq1XQZoY5Z5qZ4X6Z3jQ' text="YouTube"
-                                        img='/assets/brand-monochrome-logos/yt_logo_mono_dark.png'/> 
-           
+                          
                     
                     </div>
 
@@ -73,63 +71,52 @@ const Homepage = () => {
             <Header> Chemistry </Header>
 
             <ul className='list-disc text-sm pb-2'> 
-                <li> Organic Chemistry Labotory </li>
-                <li>  Computation Chemistry </li>
-                <li> Reaction Optimization</li>
+                <li> Undergraduate Research (Onboarding) </li>
+                <li> Significant Coursework in Chemistry </li>
+                <li> National Finalist, US National Chemistry Olympiad </li>
+                <li> SSTFI, Ongoing research about Biomolecules. </li>
             </ul>
 
-            <Text> 
-                One of my main reasons for being interested in chemistry because chemistry lays an important foundation for many other fields. In what I want my skills
-                to amount to, technology, chemistry may never be encountered. This isn't because chemistry isn't there; it's that majority of the work has already been done.
-                Furthermore, foundations of chemistry can be taken for granted. A conductor will always conduct current. Despite that, chemistry paves the way to optimization.
-                Chemistry may allow devising a new procedure to purify titanium. Or it may allow procedure that requires significantly less steps to sythesize an organic compound, which 
-                span in purpose like medicine or OLED screens.
-            </Text>
-
+            
             <Header> Electrical Engineering </Header>
 
             <ul className='list-disc text-sm pb-2'> 
-                <li> Computer Aided Design </li>
-                <li> Printed Circuit Boards </li>
+                <li> Coursework past engineering foundation to specialized topics; Mainly electronics. </li>
+                <li> Relevant Project: RT-FPGA, involvement in FPGA design of raytracing. </li>
             </ul>
 
             <Header> Biomedical Engineering </Header>
 
             <ul className='list-disc text-sm pb-2'> 
-                <li> Medical Devices </li>
-                <li> Biophysics </li>
-                <li> Neurology </li>
+                <li> Research Internship, IP. Neuroscience </li>
+                <li> Introductory Biology Classes. </li>
+                <li> JS-HS Research Regarding AI/ML algorithms in Dementia </li>
+                <li> Participating in USABO, 2025 </li>
             </ul>
 
             <Header> Computer Science </Header>
 
             <ul className='list-disc text-sm pb-2'> 
-                <li> Software Development </li>
-                <li> AI and Machine Learning</li> 
-                <li> Competitive Programming</li> 
+                <li> Moderate Coursework. </li>
+                <li> Significant Relavent Projects. Check Github for details. </li> 
+                <li> USACO </li> 
             </ul>
 
             <Header> World Languages </Header>
 
             <ul className='list-disc text-sm pb-2'> 
-                <li> Chinese </li>
-                <li> Japanese </li>
+                <li> 2-3d year Chinese. Native chinese household.  </li>
+                <li> Japanese(self-study) - Approx N2 level, preparing for last level N1. Will be taking N1 JPLT in July, and Kanken 2 in June. 5+ YoE watching Anime.</li>
             </ul>
 
 
 
-            <Title > Projects  </Title>
+   
 
-            <Text> 
-                Majority of my projects are programming projects. This is because of the reliability
-                and avaliability of resources I have. I can always program, but I can't always run
-                experiments in the lab.
-            </Text>
-
-            <Header> Personal Website  </Header>
+            <Header> Personal Website Details </Header>
             <Text>
-                This website was built off of NextJS in react. There are other pages beside this main page, see 
-                the menu.    
+                This website was built off of NextJS in react. 
+                There are other pages beside this main page, see the menu.    
             </Text>
 
             <Title> Coursework </Title>
